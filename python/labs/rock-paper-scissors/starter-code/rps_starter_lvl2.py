@@ -19,20 +19,37 @@ import random
 
 def get_player_move():
     """Asks the user to enter a move as 'r', 'p', or 's', and return it"""
-    
-    # TODO
+    return return raw_input("Choose your move [r|p|s]: ").lower()
 
+    # TODO
+#get_player_move()
 
 def get_computer_move():
     """Randomly generates the computer's move and
     returns it in the form of 'r', 'p', or 's'"""
-    return "rps"[random.randint(0,2)]
+    computer_move = random.randint(0, 2)
+    if computer_move == 0:
+       comp_move = "r"
+    elif computer_move == 1:
+        comp_move = "s"
+    else:
+        comp_move = "p"
 
+    return "
+
+get_computer_move()
 
 def determine_winner(player_move, comp_move):
     """Takes in a player move and computer move each as 'r', 'p', or 's',
     and returns the winner as 'player', 'computer', or 'tie'"""
-    
+        if player_move == comp_move:
+            return "tie"
+        elif (player_move == "r" and comp_move == "s") or \
+             (player_move == "s" and comp_move == "p") or \
+             (player_move == "p" and comp_move == "r"):
+            return "player"
+        else:
+            return "computer"
     # TODO
 
 

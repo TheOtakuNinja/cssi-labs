@@ -27,10 +27,12 @@ def get_computer_move():
     returns it in the form of 'r', 'p', or 's'"""
     return "rps"[random.randint(0,2)]
 
-
-def determine_winner(player_move, comp_move):
+def determine_winner(get_player_move, get_computer_move):
     """Takes in a player move and computer move each as 'r', 'p', or 's',
     and returns the winner as 'player', 'computer', or 'tie'"""
+    player_move=get_player_move
+    comp_move=get_computer_move
+
     if player_move == comp_move:
         return "tie"
     elif (player_move == "r" and comp_move == "s") or \
@@ -60,3 +62,6 @@ def get_move_name(short_move):
 
 
 # Write your code below - make RPS happen using the functions above!
+print(get_player_move())
+print(get_computer_move())
+print(determine_winner(get_player_move, get_computer_move))
